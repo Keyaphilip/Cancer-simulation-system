@@ -25,7 +25,7 @@ if __name__ == "__main__":
     G = make_example_ddr()
     nodes, states, y = simulate_cohort(G, n_samples=100, brca_lof_rate=0.5, noise=0.05)
     X = vectorize(states, nodes)
-    Z, pca = embed_pca(X, n=2)
+    Z, pca = embed_pca(X, n_components=2)
     clf, mean_acc, std_acc = train_classifier(X, y)
     print("Nodes:", nodes)
     print("First sample state:", states[0])

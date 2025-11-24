@@ -24,3 +24,4 @@ def propagate(G: nx.DiGraph, priors: dict, steps: int = 5, alpha: float = 0.7) -
     for _ in range(steps):
         x = alpha * (S @ x) + (1 - alpha) * np.array([priors[n] for n in nodes])
     return {n: float(x[idx[n]]) for n in nodes}
+ 
